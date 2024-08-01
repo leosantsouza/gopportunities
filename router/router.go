@@ -5,12 +5,10 @@ import "github.com/gin-gonic/gin"
 func Initialize() {
 
 	router := gin.Default()
+	
+// Initialize routes
+	initializeRoutes(router)
 
-	router.GET("/ping", func(c *gin.Context) {
-		c.JSON(200, gin.H{
-			"message": "pong",
-		})
-	})
 
 	router.Run(":8080") // listen and serve on 0.0.0.0:8080 (for windows "localhost:8080")
 
